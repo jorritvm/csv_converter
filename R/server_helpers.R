@@ -23,7 +23,7 @@ check_file = function(filename, datapath) {
   return(csv_type)
 }
 
-# convert file to other type
+# analyse file data
 get_opts = function(filenames, datapaths, sizes) {
   result = list()
   for (i in 1:length(filenames)) {
@@ -75,6 +75,7 @@ get_opts = function(filenames, datapaths, sizes) {
   return(result)
 }
 
+# read files into server memory
 read_csv_to_memory = function(opts) {
   out = list()
   for (input_file in names(opts)) {
@@ -93,11 +94,4 @@ read_csv_to_memory = function(opts) {
   return(out)
 }
 
-merge_lists_by_key = function(list1, list2) {
-  common_keys = intersect(names(list1), names(list2))  
-  new_list = list()
-  for (key in common_keys) {
-    new_list[[key]] = c(list1[[key]], list2[[key]])
-  }
-  return(new_list)
-}
+

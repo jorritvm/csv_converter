@@ -1,4 +1,3 @@
-# Define server logic required to draw a histogram
 server <- function(input, output) {
   
   source("R/server_helpers.R", local = TRUE)
