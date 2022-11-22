@@ -1,6 +1,8 @@
 library(shiny)
 library(fs)
 library(data.table)
+library(reactlog)
+library(shinyWidgets)
 
 source("R/lib_file_input_area.R")
 source("R/lib_csv.R")
@@ -11,6 +13,7 @@ source("R/server.R")
 
 
 # Run the application 
+reactlog_enable()
 options(shiny.maxRequestSize = 100 * 1024^2) # 1OOMB
 options = list(host = "0.0.0.0", port = 8000)
 shinyApp(ui = ui, server = server, options = options)

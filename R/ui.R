@@ -1,6 +1,7 @@
 ui <- fluidPage(
   titlePanel("CSV converter by JVM"),
   includeCSS(css_btn_area),
+  setBackgroundColor(color = "#F7FBFF" ),
   
   fluidRow(
     column(
@@ -32,9 +33,7 @@ ui <- fluidPage(
                          rows = 6)
     ),
     column(12,
-           downloadButton(outputId = "download",
-                          label = "Download",
-                          icon = icon("download"))
+           uiOutput(outputId = "download_section")
     )
   )
 )
