@@ -8,5 +8,5 @@ R shiny app to convert CSV files between EU and US
 ### Docker
 ```
 docker build -t csv_converter .
-docker run -p 8000:8000 --name csv_converter csv_converter
+docker run -d -p 8000:8000 --name csv_converter csv_converter
 ```
